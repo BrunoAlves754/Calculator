@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+:root {
+    --calculator: hsl(222, 26%, 31%);
+    --display: #171f35;
+    --keypad-background: hsl(223, 31%, 20%);
+    --btns: hsl(0, 0%, 90%);
+    --btns-shadow: hsl(28, 16%, 65%);
+    --del: hsl(225, 21%, 49%);
+    --del-shadow: hsl(224, 28%, 35%);
+    --res: hsl(6, 63%, 50%);
+    --res-shadow: hsl(344, 70%, 34%);
+
+    --text: hsl(221, 14%, 31%);
+    --text-display: white;
+}
+
+[data-theme="white"] {
+    --calculator: hsl(0, 0%, 90%);
+    --display: hsl(0, 0%, 95%);
+    --keypad-background: hsl(0, 5%, 81%);
+    --btns: hsl(0, 0%, 90%);
+    --btns-shadow: hsl(35, 11%, 61%);
+    --del: hsl(185, 42%, 37%);
+    --del-shadow: hsl(185, 58%, 25%);
+    --res: hsl(25, 98%, 40%);
+    --res-shadow: hsl(25, 99%, 27%);
+
+    --text: hsl(60, 10%, 19%);
+    --text-display:
+}
+
+[data-theme="neon"] {
+    --calculator: hsl(268, 75%, 9%);
+    --display: hsl(268, 71%, 12%);
+    --keypad-background: hsl(268, 71%, 12%);
+    --btns: hsl(268, 47%, 21%);
+    --btns-shadow: hsl(290, 70%, 36%);
+    --del: hsl(176, 100%, 44%);
+    --del-shadow: hsl(177, 92%, 70%);
+    --res: hsl(281, 89%, 26%);
+    --res-shadow: hsl(285, 91%, 52%);
+
+    --text: hsl(52, 100%, 62%);
+    --text-display: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+    background-color: #e5e7eb;
+
+}
+
+body {
+    font-family: "League Spartan", sans-serif;
+}
+
+main {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--calculator);
+}
+
+#calculator {
+    background-color: var(--calculator);
+    display: flex;
+    flex-direction: column;
+    min-width: 45%;
+    min-height: 90vh;
+
+    padding: 35px;
+    padding-bottom: 50px;
+    gap: 20px;
+
+    border-radius: 15px;
+
+}
+
+#calculator header {
+    color: white;
+    font-weight: bold;
+    font-size: x-large;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#theme-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    height: 100%;
+}
+
+#theme-container p {
+    font-size: medium;
+}
+
+#theme-container select {
+    background-color: var(--keypad-background);
+    color: white;
+    font-family: "League Spartan", sans-serif;
+    font-size: large;
+
+    padding: 15px;
+
+    border: none;
+    border-radius: 20px;
+
+    appearance: none;
+}
+
+#display {
+    width: 100%;
+    min-height: 159px;
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row;
+    gap: 25px;
+
+    background: var(--display);
+    color: var(--text-display);
+    border-radius: 15px;
+}
+
+#currentNumber {
+    font-size: 62px;
+}
+
+#lastNumber {
+    font-size: 26px;
+}
+
+#container-buttons {
+    background-color: var(--keypad-background);
+    padding: 25px;
+    border-radius: 20px;
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.btn,
+.operator {
+    font-family: "League Spartan", sans-serif;
+    color: var(--text);
+    font-weight: 700;
+    font-size: 42px;
+    border: none;
+    border-radius: 15px;
+    background-color: var(--btns);
+    box-shadow: 0px 8px 0px 0px var(--btns-shadow);
+}
+
+
+#res,
+#reset {
+    grid-column: span 2;
+}
+
+#res {
+    font-family: "League Spartan", sans-serif;
+    color: var(--text);
+    font-weight: 700;
+    font-size: 42px;
+    border: none;
+    border-radius: 15px;
+    background-color: var(--res);
+    box-shadow: 0px 8px 0px 0px var(--res-shadow);
+    color: white;
+}
+
+#reset,
+#del {
+    font-family: "League Spartan", sans-serif;
+    color: var(--text);
+    font-weight: 700;
+    font-size: 42px;
+    border: none;
+    border-radius: 15px;
+    background-color: var(--del);
+    box-shadow: 0px 8px 0px 0px var(--del-shadow);
+    color: white;
+}
